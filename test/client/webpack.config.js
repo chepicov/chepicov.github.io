@@ -3,7 +3,12 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: ['./index.jsx'],
+  entry: {
+    main: [
+      'babel-polyfill',
+      './index.jsx',
+    ],
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 
 import Repos from 'components/repos';
 import Commits from 'components/commits';
@@ -13,4 +13,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default withRouter(App);

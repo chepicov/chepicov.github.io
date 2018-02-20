@@ -12,7 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^8.0.0",
+    "babel-polyfill": "^6.26.0",
     "combine-section-reducers": "^1.0.5",
+    "dateformat": "^3.0.3",
     "postcss-css-reset": "^1.0.2",
     "postcss-custom-media": "^6.0.0",
     "postcss-custom-properties": "^7.0.0",

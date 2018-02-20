@@ -7,6 +7,10 @@ module.exports = {
     "node": true,
   },
   "rules": {
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "to" ]
+    }],
     "no-console": 2,
     "no-underscore-dangle": 0,
     "arrow-body-style": 0,

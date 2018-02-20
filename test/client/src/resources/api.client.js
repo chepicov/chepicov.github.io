@@ -1,5 +1,7 @@
+const url = 'http://localhost:3000';
+
 function buildUrl(path) {
-  return `http://localhost:3000/${path}`;
+  return `${url}/${path}`;
 }
 
 const getJsonHeaders = () => ({
@@ -7,11 +9,7 @@ const getJsonHeaders = () => ({
 });
 
 const responseHandler = (response) => {
-  const result = response.json().then((res) => {
-    return res;
-  });
-
-  return result;
+  return Promise.resolve(response.json());
 };
 
 export function get(path, queryStringObject) {

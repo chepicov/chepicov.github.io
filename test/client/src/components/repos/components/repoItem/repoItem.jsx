@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const RepoListItem = (props) => {
   const { repo } = props;
   return (
     <li className="list-item">
-      <Link href={`/${repo.name}/commits`}>
+      <Link to={`/${repo.name}/commits`}>
         <span className="list-item__title">
           {repo.name}
         </span>
