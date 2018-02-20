@@ -2,11 +2,11 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import combineSectionReducers from 'combine-section-reducers';
 
-import repository from './repository/repository.reducer.js';
-import commit from './commit/commit.reducer.js';
+import repo from './repo/repo.reducer';
+import commit from './commit/commit.reducer';
 
 const reducer = combineSectionReducers({
-  repository, commit,
+  repo, commit,
 });
 
 export default createStore(

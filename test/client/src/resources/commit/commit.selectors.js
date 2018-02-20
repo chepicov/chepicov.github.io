@@ -1,4 +1,4 @@
 export default {
-  getCommits: (state, repositoryId) => state.commits.commits
-    .filter(commit => commit.repositoryId === repositoryId),
+  getCommits: (state, name) => state.commit.commits
+    .filter(commit => commit.repoName === name),
 };

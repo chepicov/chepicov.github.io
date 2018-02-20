@@ -1,23 +1,28 @@
-const http = require('http');
+const Koa = require('koa');
+const bodyParser = require('koa-bodyparser');
 const fetch = require('node-fetch');
+const cors = require('kcors');
+const routes = require('./routes');
 
-const server = http.createServer((req, res) => {
-  if (req.method === 'GET') {
-    if (req.url === '/api/repositories'){ 
-      fetch('https://api.github.com/users/facebook/repos',{ 
-        headers: {'user-agent': 'node.js'},
-      }).then((response) => {
-        return response.json();
-      }).then((obj) => {
-        res.body = obj;
-        res.end();
-      });
-    }
+const app = new Koa();
+
+app.use(cors());
+app.use(bodyParser({ enableTypes: ['json', 'form', 'text'] }));
+
+app.use(async (ctx, next) => {
+  console.log(ctx.url);
+  try {
+    await next();
+  } catch (err) {
+    logger.error(err);
+    this.status = err.status || 500;
+    this.body = {
+      errors: [{ _global: 'An error has occurred' }],
+    };
+    this.app.emit('error', err, this);
   }
 });
 
-server.listen(3000, err => {
-  if (err) {
-      return console.log('error ', err);
-  }
-});
+routes(app);
+
+app.listen(3000);

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function RepositoryListItem(props) {
+const RepoListItem = (props) => {
   const { commit } = props;
   return (
     <li className="podcasts-list__item">
@@ -10,10 +10,10 @@ function RepositoryListItem(props) {
       </h1>
     </li>
   );
-}
+};
 
-RepositoryListItem.propTypes = {
+RepoListItem.propTypes = {
   commit: PropTypes.object.isRequired,
 };
 
-export default RepositoryListItem;
+export default RepoListItem;

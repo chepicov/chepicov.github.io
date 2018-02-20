@@ -7,26 +7,11 @@ const getJsonHeaders = () => ({
 });
 
 const responseHandler = (response) => {
-  if (response.status >= 500) {
-    return response.text()
-      .then(text => Promise.reject({ serverError: text }));
-  }
+  const result = response.json().then((res) => {
+    return res;
+  });
 
-  if (response.status >= 400) {
-    const isJSON = response.headers.get('Content-Type').includes('application/json');
-
-    if (isJSON) {
-      return response.json()
-        .then(data => Promise.reject({ ...data, isBadRequest: true }));
-    }
-
-    return response.text()
-      .then(text => Promise.reject({ serverError: text }));
-  }
-
-  const res = Promise.resolve(response.json());
-  console.log(res);
-  return res;
+  return result;
 };
 
 export function get(path, queryStringObject) {

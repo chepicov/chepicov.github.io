@@ -3,16 +3,24 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: ['./src/index.jsx'],
+  entry: ['./index.jsx'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js',
   },
+
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 8081,
   },
+
+  context: path.resolve(__dirname, './src'),
+  resolve: {
+    modules: ['./', 'node_modules'],
+    extensions: ['.js', '.jsx', '.pcss'],
+  },
+
   module: {
     rules: [
       {
@@ -38,7 +46,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: './src/index.html',
+      template: './index.html',
       filename: './index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),

@@ -1,1 +1,1 @@
-export default from './commits.jsx';
+export default from './commits';

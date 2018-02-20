@@ -1,17 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
-import Repositories from './components/repositories';
-import Commits from './components/commits';
+import Repos from 'components/repos';
+import Commits from 'components/commits';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div>
-        <Route path="/" component={Repositories} />
-        <Route path="/:repoId/commits" component={Commits} />
-      </div>
-    </BrowserRouter>
+    <div>
+      <Route path="/" exact component={Repos} />
+      <Route path="/:name/commits" component={Commits} />
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
-import * as commitListApi from './commit.api.js';
+import * as commitListApi from './commit.api';
 
-export const fetchCommit = id => (dispatch) => {
-  return commitListApi.fetchCommit(id)
+export const fetchCommit = name => (dispatch) => {
+  return commitListApi.fetchCommit(name)
     .then(commits => dispatch({ type: 'fetchCommits', commits }));
 };

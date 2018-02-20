@@ -1,7 +1,7 @@
-import fromRepository from './repository/repository.selectors.js';
-import fromCommit from './commit/commit.selectors.js';
+import fromRepo from './repo/repo.selectors';
+import fromCommit from './commit/commit.selectors';
 
 export default {
-  ...fromRepository,
+  ...fromRepo,
   ...fromCommit,
 };
