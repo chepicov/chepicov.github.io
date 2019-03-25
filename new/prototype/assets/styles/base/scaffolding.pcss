@@ -28,26 +28,3 @@ img {
   max-width: 100%;
   height: auto;
 }
-
-input[type="checkbox"]:checked {
-  left:380px;
-
-  & ~ .main {
-    padding-left: 380px;
-  }
-  & ~ .sidebar {
-    display: flex;
-  }
-  @media (--before-desktop-viewport) {
-    left: 35%;
-    & ~ .main {
-      padding-left: 35%;
-    }
-  }
-  @media (--narrow-viewport) {
-     left: 80%;
-  }
-}
-input[type="checkbox"] {
-  left:0;
-}

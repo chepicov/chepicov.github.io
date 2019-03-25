@@ -1,11 +1,8 @@
-.menu{
+.menu {
     list-style-type: none;
     padding-left: 0;
 
-    &__item{
-
-    }
-    &__link{
+    &__link {
         font-size:18px;
         padding: 30px;
         color:grey;
@@ -16,40 +13,42 @@
         background-position: 30px 30px;
         background-repeat: no-repeat;
 
-        &--home{
+        &--home {
             background-image: svg-load('../svg/home.svg', fill: #41484c, stroke: #000);
-            &:hover{
+            &:hover {
                 background-image: svg-load('../svg/home.svg', fill: #e27689, stroke: #000);
             }
         }
-        &--th{
+
+        &--th {
             background-image: svg-load('../svg/menu.svg', fill: #41484c, stroke: #000);
-            &:hover{
+            &:hover {
                 background-image: svg-load('../svg/menu.svg', fill: #e27689, stroke: #000);
             }
         }
-        &--user{
+
+        &--user {
             background-image: svg-load('../svg/user.svg', fill: #41484c, stroke: #000);
-            &:hover{
+            &:hover {
                 background-image: svg-load('../svg/user.svg', fill: #e27689, stroke: #000);
             }
         }
-        &--envelope{
+
+        &--envelope {
             background-image: svg-load('../svg/envelope.svg', fill: #41484c, stroke: #000);
-            &:hover{
+            &:hover {
                 background-image: svg-load('../svg/envelope.svg', fill: #e27689, stroke: #000);
             }
         }
         
-        &:hover{
+        &:hover {
             background-color: black;
             color:white;
         }
     }
-    &__active{
+
+    &__active {
             background-color: black;
             color:white;
-    }
-    &__name{
     }
 }

@@ -1,29 +1,45 @@
-.sidebar{
+.sidebar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width:380px;
-    height:100%;
+    width: 380px;
+    height: 100%;
     background-color: #202427;
     position: fixed;
     z-index: 1;
 
-    &__header{
+    &__header {
         color: grey;
     }
     
-    &__social{
+    &__social {
         display: flex;
         height: 76px;
         justify-content: center;
     }
+
     @media (--before-desktop-viewport) {
         width: 35%;
     }
+
     @media (--before-medium-viewport) {
         display: none;
+        width: 300px;
     }
-    @media (--narrow-viewport) {
-        width: 80%;
+
+    &__hamburger {
+        background: url('../images/hamburger.png');
+        position: absolute;
+        width: 70px;
+        margin: 20px;
+        left: 300px;
+        padding: 10px;
+        z-index: 2;
+        height: 70px;
+        display: none;
+
+        @media (--before-medium-viewport) {
+            display: block;
+        }
     }
 }

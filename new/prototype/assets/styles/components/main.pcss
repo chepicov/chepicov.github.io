@@ -1,14 +1,13 @@
-.main{
+.main {
     display: block;
     position: relative;
-    padding-left: 380px;
 
-    &__page{
+    &__page {
         display: block;
         width: 100%;
-        padding:30px;
+        padding: 30px;
         
-        &--intro{
+        &--intro {
             padding:0;
             background-image: url(http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/383870/e2272d6ba9565d84b624496d1d54b6ccf2b8d4df.jpg);
             background-size: cover;
@@ -20,34 +19,29 @@
             flex-wrap: wrap;
         }
 
-        &--portfolio{
+        &--portfolio {
             background-color: #eff4f4;
             color:grey;
         }
         
-        &--contact{
+        &--contact {
             background-color: #e2e7e6;
             color:#6d6d6d;
             clear:both;
         }
     }
-    &__menu-button{
-        position: fixed;
-        width: 70px;
-        margin: 20px;
-        left: 380px;
-        padding: 10px;
-        z-index: 2;
-        height: 70px;
-        visibility: hidden;
-        @media (--before-medium-viewport) {
-            visibility: visible;
+
+    &--opened {
+        @media (--medium-viewport)  {
+            padding-left: 380px;
         }
     }
-    @media (--before-desktop-viewport) {
+
+    @media (--before-desktop-viewport)  {
         padding-left: 35%;
     }
-    @media (--before-medium-viewport) {
+
+    @media (--before-medium-viewport)  {
         padding-left: 0;
     }
 }
