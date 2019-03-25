@@ -1,2 +1,3 @@
-npm i
-npm start
+To run:
+- npm i
+- npm start
